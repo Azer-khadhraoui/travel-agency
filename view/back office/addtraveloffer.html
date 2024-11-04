@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add travel offer</title>
+    
+    
+</head>
+<body  align="center">
+    <h1 align="center">Add a travel offer</h1>
+    <form id="form">
+
+        <label  for="title">title : </label>
+        <input type="text" id="title" name="title" required >
+        <p id="ti"></p>
+        <br></br>
+        <label  for="destination">destination : </label>
+        <input type="texte" id="destination" name="destination"  >
+        <p id="dest"></p>
+        <br></br>
+        <label  for="departure date">departure date : </label>
+        <input type="date" id="departuredate" name="departure date "  required >
+        <p id="dt"></p>
+        <br></br>
+        <label  for="return date">return date : </label>
+        <input type="date" id="returndate" name="return date " required >
+        <p id="dt"></p>
+        <br></br>
+        <label  for="price">price : </label>
+        <input type="number" id="price" name="price" required >
+        <p id="prix"></p>
+        <br></br>
+        <label>
+            availability :
+            <input type="checkbox" name="availability" value="" >
+            
+    
+           
+        </label>
+        <br></br>
+        <label for="category">category :
+    
+        </label>
+        <select name="category">
+            <option value="adv">adventure</option>
+            <option value="f">family</option>
+            <option value="co">couple</option>
+    
+        </select>
+        <br></br>
+       <!--- <button onclick="validerformulaire()">add offer</button>-->
+        <input type="submit" value="Add Offer" id="but">
+    </form>
+
+
+    <script>
+        var form = document.getElementById("form");
+    var butt=document.getElementById("but");
+        var ti=document.getElementById("ti");
+       
+        form.addEventListener("submit",function(e){
+        
+        e.preventDefault();
+        var title = document.getElementById("title").value;
+        ti.innerText = "";
+        if (title.length < 3) {
+            ti.innerText="Le titre doit contenir au moins 3 caractères.";
+            ti.style.color="red";
+        }
+        else{
+            ti.innerText="correct";
+            ti.style.color="green";  
+        }
+
+
+
+        var destination= document.getElementById("destination").value;
+        var dest=document.getElementById("dest");
+b=1;
+dest.innerText = "";
+if (destination.length < 3) {
+    dest.innerText=("La destination doit contenir au moins 3 caractères.");
+    dest.style.color="red";
+    
+}
+else{
+            dest.innerText="correct";
+            dest.style.color="green";  
+        }
+for (let i = 0; i < destination.length && b==1; i++) {
+    let char = destination[i];
+    if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char === ' ')) {
+        dest.innerText=("La destination doit contenir uniquement des lettres et des espaces.");
+        b=0;
+        dest.style.color="red";
+        
+    }
+}
+
+
+var price = document.getElementById("price").value;
+var prix=document.getElementById("prix");
+prix.innerText = "";
+if (price<0) {
+    prix.innerText=("prix doit etre postif");
+    prix.style.color="red";
+    
+}
+else{
+            prix.innerText="correct";
+           prix.style.color="green";  
+        }
+
+
+
+var departureDate = document.getElementById("departuredate").value;
+var returnDate = document.getElementById("returndate").value;
+var dt=document.getElementById("dt");
+
+dt.innerText="";
+if (returnDate <= departureDate) {
+    dt.innerText=("La date de retour doit être ultérieure à la date de départ.");
+    dt.style.color="red";
+   
+}
+else{
+            dt.innerText="correct";
+            dt.style.color="green";  
+        }
+
+
+        
+        });
+        </script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
