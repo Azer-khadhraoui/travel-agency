@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
 
     // Vérifie que l'ID est valide
     if (!filter_var($id, FILTER_VALIDATE_INT)) {
-        die("ID invalide.");
+        die("ID invalide.reessayer");
     }
 
     $controller = new TravelOfferController();
