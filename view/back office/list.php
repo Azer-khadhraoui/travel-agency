@@ -89,7 +89,7 @@ foreach ($list as $row) {
             <td>{$disponible}</td>
             <td>{$categorie}</td>
             <td>
-        <a href='delete.php?id={$id}' onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');\">Supprimer</a>
+        <a href='delete.php?id={$id}' onclick=\"return confirm('Êtes-vous sûr de  supprimer cette offre ?');\">Supprimer</a>
       </td>;
 
           </tr>";
